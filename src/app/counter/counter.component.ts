@@ -15,10 +15,10 @@ export class CounterComponent implements OnInit {
   }
 
   Increment() {
-    this.count = this.service.Add();
+    this.count = this.service.add();
   }
   Decrement() {
-    this.count = this.service.Sub();
+    this.count = this.service.sub();
   }
 
 }

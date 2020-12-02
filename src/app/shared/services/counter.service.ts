@@ -7,10 +7,10 @@ export class CounterService {
 
   counter = 0;
   constructor() { }
-  Add() {
+  add() {
     this.counter += 1;
   }
-  Sub() {
+  sub() {
     this.counter -= 1;
   }
 }
