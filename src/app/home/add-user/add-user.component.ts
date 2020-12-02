@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Employee } from '../../model/employee.model';
-import { ServicesService } from '../../Services/services.service';
+import { Employee } from '../../shared/services/model/employee.model';
+import { ServicesService } from '../../shared/services/services.service';
 
 @Component({
   selector: 'app-add-user',
@@ -11,6 +11,7 @@ import { ServicesService } from '../../Services/services.service';
 })
 export class AddUserComponent implements OnInit {
 
+  
   constructor(public service: ServicesService) { }
 
   
@@ -18,14 +19,12 @@ export class AddUserComponent implements OnInit {
    
   }
   
-  createAndUpdate(currentUser: Employee) {
-      console.log(currentUser);
-      if(currentUser.id != null){
-        console.log("update");
-        this.updateUser(currentUser)
+  createAndUpdate(user: Employee) {
+      console.log(user);
+      if(user.id != null){
+        this.updateUser(user)
       }else {
-        console.log("create");
-        this.createUser(currentUser)
+        this.createUser(user)
       }
   }
 

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,6 +11,8 @@ import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialComponentsModule } from './material-components/material-components.module';
 import { CounterComponent } from './counter/counter.component';
+import { HeaderInterceptor } from './interceptors/HeaderInterceptor';
+import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 
 
 
@@ -18,6 +20,7 @@ import { CounterComponent } from './counter/counter.component';
   declarations: [
     AppComponent,
     CounterComponent,
+    ReactiveFormsComponent,
    
     
   ],
@@ -31,7 +34,9 @@ import { CounterComponent } from './counter/counter.component';
     BrowserAnimationsModule,
     MaterialComponentsModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: HeaderInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

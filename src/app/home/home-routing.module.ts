@@ -9,7 +9,8 @@ const routes: Routes = [
   // {path:'', redirectTo:'',pathMatch:'full'},
   {path:'user-data',component:UserDataComponent},
   {path:'user/:id',component:UserComponent},
-  {path: 'adduser', component: AddUserComponent}
+  {path: 'adduser', component: AddUserComponent},
+  {path:'form',loadChildren:() => import('../reactive-forms/reactive-forms.module').then(m => m.ReactiveFormsModule)}
 ];
 
 @NgModule({

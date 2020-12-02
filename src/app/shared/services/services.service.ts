@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Observable } from 'rxjs';
-import { Employee } from '../model/employee.model';
+import { Employee } from './model/employee.model';
 
 const headeroptions = {
   headers: new HttpHeaders({'content-type':'application/json'})
@@ -33,8 +33,8 @@ export class ServicesService {
   createUser(user:Employee): Observable<Employee> {
     return this.http.post<Employee>(this.baseUrl,user,headeroptions)
   }
-  updateUser(user:Employee): Observable<Employee> {
-    return this.http.post<Employee>(this.baseUrl,user,headeroptions)
+  updateUser(currentUser:Employee): Observable<Employee> {
+    return this.http.post<Employee>(this.baseUrl,currentUser,headeroptions)
   }
 
   getUserData(id: number) {

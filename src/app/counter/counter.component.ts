@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CounterService } from '../Services/counter.service';
+import { CounterService } from '../shared/services/counter.service';
 
 @Component({
   selector: 'app-counter',
