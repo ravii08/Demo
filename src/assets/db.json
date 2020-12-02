@@ -1,0 +1,40 @@
+{
+  "User": [
+    {
+      "userid": "1",
+      "id": "101",
+      "title": "Lahari",
+      "body": "IAS"
+    },
+    {
+      "userid": "2",
+      "id": "102",
+      "title": "Ravindra",
+      "body": "Support "
+    },
+    {
+      "userid": "3",
+      "id": "103",
+      "title": "Lokesh",
+      "body": "Doctor"
+    },
+    {
+      "userid": "ravindra",
+      "id": "0",
+      "title": "ds",
+      "body": "Support Executive"
+    },
+    {
+      "userid": "5",
+      "id": "105",
+      "title": "balu",
+      "body": "studying"
+    },
+    {
+      "userid": "8",
+      "id": "108",
+      "title": "allaitha",
+      "body": "student"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+<div class="container">
+    <h2 style="text-align: center;">User Data</h2>
+<table class="table table-bordered table-stripped" style="margin-top: 20px;" *ngIf="user">
+    <tr>
+    <th>USer Id</th>
+    <td>{{user.userid}}</td>
+    </tr>
+    <tr>
+    <th> Id</th>
+    <td>{{user.id}}</td>
+    </tr>
+    <tr>
+    <th>Title</th>
+    <td>{{user.title}}</td>
+    </tr>
+    <tr>
+    <th>Completed</th>
+    <td>{{user.body}}</td>
+    </tr>
+</table>
+<button class="btn btn-primary" routerLink="/user-data">Back</button>
+</div>
