@@ -1,0 +1,16 @@
+<div class="fieldTitle">
+   
+    <label for={{labelValue}} attr.aria-label={{labelValue}}>{{labelValue}}</label>
+    
+</div>
+
+<div class="inputValue">
+    <mat-form-field [formGroup]=parentForm appearance="outline">
+        <textarea attr.aria-label="{{labelValue + '. ' + toolTip}}" type={{type}} role="combobox" 
+             formControlName={{Name}} matInput  placeholder={{placeholderValue}}></textarea>
+             
+             <mat-error *ngIf=error>{{error}}</mat-error>
+    </mat-form-field>
+
+</div>
+

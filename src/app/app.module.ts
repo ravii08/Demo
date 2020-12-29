@@ -13,14 +13,20 @@ import { MaterialComponentsModule } from './material-components/material-compone
 import { CounterComponent } from './counter/counter.component';
 import { HeaderInterceptor } from './interceptors/HeaderInterceptor';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
-
-
+import { InputFieldComponent } from './shared/controls/input-field/input-field.component';
+import { DatePickerComponent } from './shared/controls/date-picker/date-picker.component';
+import { TextInputComponent } from './shared/controls/text-input/text-input.component';
+import { RadioButtonComponent } from './shared/controls/radio-button/radio-button.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CounterComponent,
     ReactiveFormsComponent,
+    InputFieldComponent,
+    DatePickerComponent,
+    TextInputComponent,
+    RadioButtonComponent,
    
     
   ],

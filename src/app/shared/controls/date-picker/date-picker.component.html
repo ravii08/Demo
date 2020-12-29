@@ -1,0 +1,17 @@
+
+<div class="fieldTitle">
+    <!-- <span class="mandatory" *ngIf="isMandatory">*</span> -->
+    <label for={{labelValue}} attr.aria-label={{labelValue}}>{{labelValue}}</label>
+</div>
+
+<div class="inputValue">
+    <mat-form-field [formGroup]=parentForm appearance="outline">
+        <input attr.aria-label="{{labelValue + '. ' + toolTip}}" type={{type}} role="combobox" 
+            [ngClass]="{'skip-main-field':focusFlag }" formControlName={{Name}} matInput  [matDatepicker]="picker">
+         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+         <mat-datepicker #picker></mat-datepicker>
+
+         <mat-error *ngIf=error>{{error}}</mat-error>
+    </mat-form-field>
+
+</div>

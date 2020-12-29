@@ -1,73 +1,29 @@
-<form class="form-container" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
-    <mat-card>
-        <mat-card-header>
-            <mat-card-title>Reactive Form</mat-card-title>
-        </mat-card-header>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <mat-card class="login-content">
+        <h1>Sign In</h1>
         <mat-card-content>
-            <div class="row">
-                <div class="col-md-12">
-                    <mat-form-field class="full-width">
-                        <input matInput formControlName="userName" type="input" placeholder="Username">
-
-                    </mat-form-field>
-                    <span class="text-danger"
-                        *ngIf="(registerFormControl.userName.touched || submitted) && registerFormControl.userName.errors">
-                        Username is required.
-                    </span>
+            <div>
+                <div>
+                    <app-input-field [focusFlag]=true class="expand-input-full formElement" [parentForm]="loginForm"
+                        [placeholderValue]=nameLabel [labelValue]=nameLabel [isMandatory]=true [Name]=Name
+                        [error]=nameError>
+                    </app-input-field>
                 </div>
-
-                <div class="col-md-12 top-padding">
-                    <mat-form-field class="full-width" appearance="fill">
-                        <mat-label>Select DOB</mat-label>
-                        <input matInput formControlName="dateOfBirth" [matDatepicker]="picker">
-                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                        <mat-datepicker #picker></mat-datepicker>
-                    </mat-form-field>
-                    <span class="text-danger"
-                        *ngIf="(registerFormControl.dateOfBirth.touched || submitted) && registerFormControl.dateOfBirth.invalid">
-                        Date of Birth is required.
-                    </span>
-                </div>
-                <div class="col-md-12 ">
-                    <mat-form-field class="full-width" appearance="fill">
-                        <mat-label>State</mat-label>
-                        <mat-select formControlName="location">
-                            <mat-option>None</mat-option>
-                            <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                    <span class="text-danger"
-                        *ngIf="(registerFormControl.location.touched || submitted) && registerFormControl.location.invalid">
-                        Location is required.
-                    </span>
-                </div>
+                <app-text-input [focusFlag]=true class="expand-input-full formElemt" [parentForm]="loginForm"
+                    [placeholderValue]=CommentLabel [labelValue]=CommentLabel [isMandatory]=true [Name]=Comment
+                    [error]=CommentError>
+                </app-text-input>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <mat-form-field class="full-width">
-                        <input matInput formControlName="experince" type="number" placeholder="Experince">
-                    </mat-form-field>
-                    <span class="text-danger"
-                        *ngIf="(registerFormControl.experince.touched || submitted) && registerFormControl.experince.invalid">
-                        Experince is required.
-                    </span>
-                </div>
-                <div class="col-sm-12">
-                    <mat-form-field class="full-width">
-                        <textarea matInput formControlName="comments" placeholder="Comments"></textarea>
-                    </mat-form-field>
-                    <span class="text-danger"
-                        *ngIf="(registerFormControl.comments.touched || submitted) && registerFormControl.comments.invalid">
-                        Comments are required.
-                    </span>
-                </div>
-            </div>
+            <app-date-picker [focusFlag]=true class="expand-input-full formElement" [parentForm]="loginForm"
+                [placeholderValue]=DateLabel [labelValue]=DateLabel [isMandatory]=true [Name]=Date [error]=nameError>
+            </app-date-picker>
+            <app-radio-button [labelValue]=radioLabel [options]="options" [Name]=Gender>
+
+            </app-radio-button>
         </mat-card-content>
-                    <div class="row">
-                        <button mat-raised-button color="primary" type="submit" class="buttons"
-                            [disabled]="!formGroup.valid">Submit</button>
-                        <button mat-raised-button color="primary" type="reset" class="buttons"
-                            [disabled]="!formGroup.valid">Reset</button>
-                    </div>
+        <div class="flexrow">
+            <button mat-button [disabled]="!loginForm.valid" color="accent">Save</button>
+            <button mat-button color="warn" (click)="onReset()">Reset</button>
+        </div>
     </mat-card>
 </form>

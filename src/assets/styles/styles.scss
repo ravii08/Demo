@@ -37,19 +37,24 @@
     padding-top: 3px;
 }
 
-.form-container{
+.form-card {
+    width: 30%;
+    margin: auto;
+    margin-top: 4%;
+    border: 1px solid grey;
     
-   justify-content: center;
-    width: 80vh;
-    height: 300px;
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
 }
  
 .buttons {
     margin: 20px; 
+}
+
+.mat-form-field-outline-thick {
+    color: black !important;
+}
+
+.mat-form-field {
+    width: 100px;
 }
 
 .add-user-heading {
@@ -72,4 +77,43 @@
 
 .user-add-button {
     margin-bottom: 20px;
+}
+
+.menu-spacer {
+    flex: 1 1 auto;
+  }
+
+.expand-input-full {
+  width: 100%;
+  margin-bottom: 4%;
+  
+}
+
+.formElement {
+  margin-bottom: 4%;
+ 
+}
+
+.login-content {
+  margin: auto;
+  width: 30%;
+  margin-top: 4%;
+  border: 1px solid greenyellow;
+  background-color: skyblue;
+
+}
+
+.mat-card {
+  padding: 3%;
+}
+
+.flexrow {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+button {
+    width: 180px;
+    background-color: antiquewhite;
 }

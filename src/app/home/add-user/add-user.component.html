@@ -1,7 +1,7 @@
 <h2 class="add-user-heading">Add User</h2>
 
 <div class="container" > 
-  <button class="btn btn-primary" routerLink="/user-data">Back</button>
+  <button class="btn btn-primary" style="color: blue;" routerLink="/user-data">Back</button>
     <div class="form-group">
       <label for="userid">Userid</label>
       <input  class="form-control" id="userid" placeholder="Enter user ID" [(ngModel)]="service.currentUser.userid">
@@ -18,7 +18,7 @@
       <label for="body">Completed</label>
       <input class="form-control" id="body" placeholder="Enter Body" [(ngModel)]="service.currentUser.body">
     </div>
-    <button  class="btn btn-primary" [routerLink]="['/user-data']" (click)="createAndUpdate(service.currentUser)">Submit</button>
+    <button  class="btn btn-primary" style="color: green;" [routerLink]="['/user-data']" (click)="createAndUpdate(service.currentUser)">Submit</button>
   </div>
 
   

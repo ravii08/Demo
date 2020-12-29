@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormService } from '../shared/services/form.service';
 
 @Component({
   selector: 'app-reactive-forms',
@@ -8,48 +9,54 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ReactiveFormsComponent implements OnInit {
 
-  states: string[] = [
-    'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware',
-    'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky',
-    'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi',
-    'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico',
-    'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania',
-    'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
-    'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming', 'India'
-  ];
-
-  formGroup: FormGroup;
+  loginForm: FormGroup;
   submitted = false;
-  registerForm: any;
+ 
+
+  nameLabel = 'NBK111 Id';
+  Name = 'name';
+  nameError = 'Name is required';
+  
+
+  CommentLabel = 'Comments';
+  Comment = 'comment';
+  CommentError ="Comments are required"
+
+  DateLabel = "Select DOB";
+  Date = 'date';
+
+  radioLabel = "Gender";
+  Gender = 'gender';
+  options = ['yes', 'No']
 
 
-  constructor(private fb: FormBuilder) { }
-
+  constructor(private fbLoginForm: FormBuilder){}
   ngOnInit(): void {
-    this.createForm();
-  }
-
-  createForm() {
-    this.formGroup = this.fb.group({
-      userName: ['', Validators.required],
-      dateOfBirth: ['', Validators.required],
-      location: ['', Validators.required],
-      experince: ['', Validators.required],
-      comments: ['', Validators.required]
+    this.loginForm = this.fbLoginForm.group({
+      name:['',Validators.required],
+      comment:['', Validators.required],
+      date: ['',Validators.required],
+      gender: ['',Validators.required]
     })
   }
 
-  get registerFormControl() {
-    return this.formGroup.controls;
+  get formControl() {
+    return this.loginForm.controls;
   }
-
 
   onSubmit() {
     this.submitted = true;
-    if (this.formGroup.invalid) {
-      return;
+    if (this.loginForm.valid) {
+      alert('Form Submitted succesfully!!!\n Check the values in browser console.');
+      console.table(this.loginForm.value);
+      this.loginForm.reset()
     }
-    console.log(this.formGroup.value)
-    alert('SUCCESS!!' + JSON.stringify(this.formGroup.value))
   }
+
+  onReset() {
+    this.loginForm.reset()
+  }
+
+
+
 }
